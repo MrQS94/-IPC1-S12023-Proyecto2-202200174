@@ -18,6 +18,8 @@ import java.io.File;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+import javax.swing.Timer;
 import listas.ListaDoble;
 import listas.ListaSimple;
 import vista.Convertidor;
@@ -63,37 +65,70 @@ public class ControladorConvertidor implements ItemListener, ActionListener {
             }
         }
     }
+    int x = 0;
+    Timer timer;
 
     private void EjecutarUnaImagen() throws Exception {
-        String imgUrl = convert.jList.getSelectedValue();
-        File file = new File(imgUrl);
 
-        if (convert.jCheckBoxJPEGTOBMP.isSelected()) {
-            JPEGtoBMPImage jpegToBMP = new JPEGtoBMPImage("", file);
-            JPEGHandler.runHandler(jpegToBMP, convert.jTextArea);
+        if (convert.jList.getSelectedValue() != null) {
+            String imgUrl = convert.jList.getSelectedValue();
+            File file = new File(imgUrl);
+
+            String texto = "";
+            int tiempo = 0;
+
+            if (convert.jCheckBoxJPEGTOBMP.isSelected()) {
+                JPEGtoBMPImage jpegToBMP = new JPEGtoBMPImage(file.getName(), file);
+                texto += convert.jTextArea.getText();
+                texto += JPEGHandler.runHandler(jpegToBMP, texto, convert.jTextArea);
+                tiempo++;
+            }
+
+            if (convert.jCheckBoxCopia.isSelected()) {
+                JPEGImageCopy copy = new JPEGImageCopy(file.getName(), file);
+                texto += convert.jTextArea.getText();
+                texto += JPEGHandler.runHandler(copy, texto, convert.jTextArea);
+                tiempo++;
+            }
+
+            if (convert.jCheckBoxRojoVerde.isSelected()) {
+                JPEGImageHandlerColors handlerColor = new JPEGImageHandlerColors(file.getName(), file);
+                texto += convert.jTextArea.getText();
+                texto += JPEGHandler.runHandler(handlerColor, texto, convert.jTextArea);
+                tiempo++;
+            }
+
+            if (convert.jCheckBoxModificar.isSelected()) {
+                JPEGImageHandlerRotator rotator = new JPEGImageHandlerRotator(file.getName(), file);
+                texto += convert.jTextArea.getText();
+                texto += JPEGHandler.runHandler(rotator, texto, convert.jTextArea);
+                tiempo++;
+            }
+
+            if (convert.jCheckBoxBN.isSelected()) {
+                JPEGImageHandlerBN bn = new JPEGImageHandlerBN(file.getName(), file);
+                texto += convert.jTextArea.getText();
+                texto += JPEGHandler.runHandler(bn, texto, convert.jTextArea);
+                tiempo++;
+            }
+
+            ActionListener ac = new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    x++;
+                    convert.jProgressBar.setValue(x);
+                    if (convert.jProgressBar.getValue() == 100) {
+                        timer.stop();
+                        JOptionPane.showMessageDialog(null, "Ha finalizado. Puede ver sus imagenes en la carpeta temporal.", "INFORMATION!", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                }
+            };
+            timer = new Timer(75 / tiempo, ac);
+            timer.start();
+        } else {
+            JOptionPane.showMessageDialog(null, "Seleccione o agregue una imagen.", "ADVERTENCIA!", JOptionPane.WARNING_MESSAGE);
         }
 
-        if (convert.jCheckBoxCopia.isSelected()) {
-            JPEGImageCopy copy = new JPEGImageCopy("", file);
-            JPEGHandler.runHandler(copy, convert.jTextArea);
-        }
-
-        if (convert.jCheckBoxRojoVerde.isSelected()) {
-            JPEGImageHandlerColors handlerColor = new JPEGImageHandlerColors("", file);
-            JPEGHandler.runHandler(handlerColor, convert.jTextArea);
-        }
-
-        if (convert.jCheckBoxModificar.isSelected()) {
-            JPEGImageHandlerRotator rotator = new JPEGImageHandlerRotator("", file);
-            JPEGHandler.runHandler(rotator, convert.jTextArea);
-        }
-
-        if (convert.jCheckBoxBN.isSelected()) {
-            JPEGImageHandlerBN bn = new JPEGImageHandlerBN("", file);
-            JPEGHandler.runHandler(bn, convert.jTextArea);
-        }
-        
-        System.out.flush();
     }
 
     private void CargarUserCatImg() {

@@ -27,17 +27,18 @@ public class JPEGHandler {
          */
     }
 
-    public static void runHandler(ImageHandler imgh, JTextArea jta) throws Exception {
-        String texto = "";
+    public static String runHandler(ImageHandler imgh, String texto, JTextArea jta) throws Exception {
+        texto += jta.getText();
         texto += "--------------------------------------";
         texto += "\n" + imgh.getClass().getTypeName().toUpperCase() + ": ";
         texto += "\nLeyendo imagen : " + imgh.getFileName();
         imgh.readFile();
-        texto += "Proceso de lectura de imagen terminado!";
-        texto += "\nGenerando imagenes : ";
+        texto += "\nProceso de lectura de imagen terminado!";
         imgh.generateFiles();
-        texto += "Proceso de generacion de archivos terminado!";
+        texto += "\nAplicando filtro: Copia JPEG";
+        texto += "\nProceso de generacion de archivos terminado!";
         texto += "\n--------------------------------------";
         jta.setText(texto);
+        return texto;
     }
 }

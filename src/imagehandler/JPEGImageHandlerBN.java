@@ -85,7 +85,6 @@ public class JPEGImageHandlerBN extends ImageHandler {
 
         File file = new File(url);
         file.delete();
-        JOptionPane.showMessageDialog(null, "Imagen convertida a Blanco y Negro con exito!", "Blanco y Negro!", JOptionPane.INFORMATION_MESSAGE);
     }
 
 }

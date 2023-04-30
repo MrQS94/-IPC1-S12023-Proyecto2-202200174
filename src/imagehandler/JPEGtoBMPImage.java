@@ -56,12 +56,8 @@ public class JPEGtoBMPImage extends ImageHandler {
         ImageIO.write(imagen, ext, salida);
         salida.close();
         entrada.close();
-        
         File file = new File(url);
         System.out.println(file.getName());
-        
-        JOptionPane.showMessageDialog(null, "La imágen ha sido convertida con exito!", "CONVERTIDO!", JOptionPane.INFORMATION_MESSAGE);
-        
     }
 
 }

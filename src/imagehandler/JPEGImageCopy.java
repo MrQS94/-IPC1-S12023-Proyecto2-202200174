@@ -51,13 +51,11 @@ public class JPEGImageCopy extends ImageHandler {
         ImageIO.write(imagen2, "jpeg", output);
         input.close();
         output.close();
-        
+
         File fileBMP = new File(url);
         File fileJPEG = new File(url2);
         System.out.println(fileBMP.getName());
         System.out.println(fileJPEG.getName());
-
-        JOptionPane.showMessageDialog(null, "La imágen ha sido copiada con exito!", "COPIADO!", JOptionPane.INFORMATION_MESSAGE);
     }
 
 }

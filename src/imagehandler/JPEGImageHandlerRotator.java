@@ -46,7 +46,7 @@ public class JPEGImageHandlerRotator extends ImageHandler {
 
         FileInputStream inputH = new FileInputStream(url);
         FileInputStream inputV = new FileInputStream(url);
-        
+
         BufferedImage imageH = ImageIO.read(inputH);
         BufferedImage imageV = ImageIO.read(inputV);
 
@@ -72,7 +72,7 @@ public class JPEGImageHandlerRotator extends ImageHandler {
         ImageIO.write(imageH, "jpeg", fotoH);
         fotoH.close();
         inputH.close();
-        
+
         //Vertical
         FileOutputStream fotoV = new FileOutputStream("temporal/Vrotation-" + converted + ".jpeg");
         for (int x = 0; x < imageV.getWidth(); x++) {
@@ -83,16 +83,15 @@ public class JPEGImageHandlerRotator extends ImageHandler {
         ImageIO.write(imageH, "jpeg", fotoV);
         fotoV.close();
         inputV.close();
-        
+
         File fileH = new File("temporal/Hrotation-" + converted + ".jpeg");
         File fileV = new File("temporal/Vrotation-" + converted + ".jpeg");
         System.out.println(fileH.getName());
         System.out.println(fileV.getName());
-        
+
         // Eliminado BMP
         File file = new File(url);
         file.delete();
-        JOptionPane.showMessageDialog(null, "Imagen rotada con exito!", "ROTATION!", JOptionPane.INFORMATION_MESSAGE);
     }
 
 }

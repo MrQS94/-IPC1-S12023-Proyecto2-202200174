@@ -159,8 +159,6 @@ public class JPEGImageHandlerColors extends ImageHandler {
         File file = new File(url);
         file.delete();
 
-        JOptionPane.showMessageDialog(null, "La imágen ha sido convertida con exito!", "CONVERTIDO!", JOptionPane.INFORMATION_MESSAGE);
-
     }
 
 }

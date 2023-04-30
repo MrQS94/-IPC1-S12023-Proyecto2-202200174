@@ -19,6 +19,7 @@ import imagehandler.JPEGImageHandlerBN;
 import imagehandler.JPEGImageHandlerColors;
 import imagehandler.JPEGImageHandlerRotator;
 import imagehandler.JPEGtoBMPImage;
+import javax.swing.JOptionPane;
 import vista.Editor;
 
 /**
@@ -59,26 +60,31 @@ public class ControladorEditor implements ActionListener {
     private void BlancoNegro() throws Exception {
         JPEGImageHandlerBN bn = new JPEGImageHandlerBN(file.getName(), file);
         JPEGHandler.runHandler(bn);
+        JOptionPane.showMessageDialog(null, "Imagen convertida a Blanco y Negro con exito!", "Blanco y Negro!", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private void RotarImagen() throws Exception {
         JPEGImageHandlerRotator rotator = new JPEGImageHandlerRotator(file.getName(), file);
         JPEGHandler.runHandler(rotator);
+         JOptionPane.showMessageDialog(null, "Imagen rotada con exito!", "ROTATION!", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private void RojoVerdeAzulSepia() throws Exception {
         JPEGImageHandlerColors handlerColor = new JPEGImageHandlerColors(file.getName(), file);
         JPEGHandler.runHandler(handlerColor);
+        JOptionPane.showMessageDialog(null, "La imágen ha sido convertida con exito!", "CONVERTIDO!", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private void CopyJPEG() throws Exception {
         JPEGImageCopy copy = new JPEGImageCopy(file.getName(), file);
         JPEGHandler.runHandler(copy);
+        JOptionPane.showMessageDialog(null, "La imágen ha sido copiada con exito!", "COPIADO!", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private void JPEG_BMP() throws Exception {
         JPEGtoBMPImage jpeg_BMP = new JPEGtoBMPImage(file.getName(), file);
         JPEGHandler.runHandler(jpeg_BMP);
+        JOptionPane.showMessageDialog(null, "La imágen ha sido convertida con exito!", "CONVERTIDO!", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private void HabilitarJComboBox() {

@@ -436,7 +436,7 @@
               <Font name="Segoe UI" size="14" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="CANTIDAD PROCESADA"/>
+            <Property name="text" type="java.lang.String" value="CONSOLA DE PROCESAMIENTO"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
         </Component>

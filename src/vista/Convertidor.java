@@ -201,7 +201,7 @@ public class Convertidor extends javax.swing.JInternalFrame {
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("CANTIDAD PROCESADA");
+        jLabel5.setText("CONSOLA DE PROCESAMIENTO");
         jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jTextArea.setEditable(false);

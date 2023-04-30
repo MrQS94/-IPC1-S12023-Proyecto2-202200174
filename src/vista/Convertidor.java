@@ -37,19 +37,20 @@ public class Convertidor extends javax.swing.JInternalFrame {
         jList = new javax.swing.JList<>();
         jLabel3 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        jRadioButtonJPEGaBMP = new javax.swing.JRadioButton();
-        jRadioButtonCopiaJPEG = new javax.swing.JRadioButton();
-        jRadioButtonRojoVerdeAzulSepia = new javax.swing.JRadioButton();
-        jRadioButtonModificar = new javax.swing.JRadioButton();
-        jRadioButtonBlancoNegro = new javax.swing.JRadioButton();
-        jButtonEjecutar = new javax.swing.JButton();
+        jCheckBoxJPEGTOBMP = new javax.swing.JCheckBox();
+        jCheckBoxCopia = new javax.swing.JCheckBox();
+        jCheckBoxRojoVerde = new javax.swing.JCheckBox();
+        jCheckBoxModificar = new javax.swing.JCheckBox();
+        jCheckBoxBN = new javax.swing.JCheckBox();
+        jButtonEjecutarParalelo = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jProgressBar1 = new javax.swing.JProgressBar();
+        jProgressBar = new javax.swing.JProgressBar();
         jPanel5 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jTextArea = new javax.swing.JTextArea();
+        jButtonEjecutar = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -101,6 +102,7 @@ public class Convertidor extends javax.swing.JInternalFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(jList);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -126,26 +128,15 @@ public class Convertidor extends javax.swing.JInternalFrame {
 
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jRadioButtonJPEGaBMP.setText("JPEG a BMP y Viceversa");
-        jRadioButtonJPEGaBMP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jRadioButtonJPEGaBMP.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jRadioButtonJPEGaBMP.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jCheckBoxJPEGTOBMP.setText("JPEG a BMP y Viceversa");
 
-        jRadioButtonCopiaJPEG.setText("Copia JPEG");
-        jRadioButtonCopiaJPEG.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jRadioButtonCopiaJPEG.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jCheckBoxCopia.setText("Copia JPEG");
 
-        jRadioButtonRojoVerdeAzulSepia.setText("Rojo, Verde, Azul y Sepia");
-        jRadioButtonRojoVerdeAzulSepia.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jRadioButtonRojoVerdeAzulSepia.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jCheckBoxRojoVerde.setText("Rojo, Verde, Azul y Sepia");
 
-        jRadioButtonModificar.setText("Modificar Imagen");
-        jRadioButtonModificar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jRadioButtonModificar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jCheckBoxModificar.setText("Modificar Imagen");
 
-        jRadioButtonBlancoNegro.setText("Blanco y Negro");
-        jRadioButtonBlancoNegro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jRadioButtonBlancoNegro.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jCheckBoxBN.setText("Blanco y Negro");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -154,31 +145,31 @@ public class Convertidor extends javax.swing.JInternalFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButtonCopiaJPEG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jRadioButtonJPEGaBMP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jRadioButtonBlancoNegro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jRadioButtonModificar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jRadioButtonRojoVerdeAzulSepia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE))
+                    .addComponent(jCheckBoxJPEGTOBMP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jCheckBoxCopia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+                    .addComponent(jCheckBoxRojoVerde, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+                    .addComponent(jCheckBoxModificar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+                    .addComponent(jCheckBoxBN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jRadioButtonJPEGaBMP, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jCheckBoxJPEGTOBMP)
                 .addGap(18, 18, 18)
-                .addComponent(jRadioButtonCopiaJPEG, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jCheckBoxCopia)
                 .addGap(18, 18, 18)
-                .addComponent(jRadioButtonRojoVerdeAzulSepia, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jCheckBoxRojoVerde)
                 .addGap(18, 18, 18)
-                .addComponent(jRadioButtonModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jCheckBoxModificar)
                 .addGap(18, 18, 18)
-                .addComponent(jRadioButtonBlancoNegro, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jCheckBoxBN)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        jButtonEjecutar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButtonEjecutar.setText("EJECUTAR EN PARALELO");
+        jButtonEjecutarParalelo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButtonEjecutarParalelo.setText("EJECUTAR EN PARALELO");
 
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -194,7 +185,7 @@ public class Convertidor extends javax.swing.JInternalFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jProgressBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -203,7 +194,7 @@ public class Convertidor extends javax.swing.JInternalFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
+                .addComponent(jProgressBar, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -214,9 +205,9 @@ public class Convertidor extends javax.swing.JInternalFrame {
         jLabel5.setText("CANTIDAD PROCESADA");
         jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        jTextArea.setColumns(20);
+        jTextArea.setRows(5);
+        jScrollPane2.setViewportView(jTextArea);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -239,6 +230,9 @@ public class Convertidor extends javax.swing.JInternalFrame {
                 .addGap(12, 12, 12))
         );
 
+        jButtonEjecutar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButtonEjecutar.setText("EJECUTAR UNA IMAGEN");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -257,8 +251,10 @@ public class Convertidor extends javax.swing.JInternalFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
-                                .addComponent(jButtonEjecutar, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(24, 24, 24))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jButtonEjecutar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButtonEjecutarParalelo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(58, 58, 58))
                             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(30, 30, 30))
@@ -278,12 +274,16 @@ public class Convertidor extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(58, 58, 58)
-                                .addComponent(jButtonEjecutar, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(28, 28, 28)
+                                .addComponent(jButtonEjecutar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButtonEjecutarParalelo, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(25, 25, 25)))
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -296,7 +296,13 @@ public class Convertidor extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton jButtonAgregar;
-    private javax.swing.JButton jButtonEjecutar;
+    public javax.swing.JButton jButtonEjecutar;
+    private javax.swing.JButton jButtonEjecutarParalelo;
+    public javax.swing.JCheckBox jCheckBoxBN;
+    public javax.swing.JCheckBox jCheckBoxCopia;
+    public javax.swing.JCheckBox jCheckBoxJPEGTOBMP;
+    public javax.swing.JCheckBox jCheckBoxModificar;
+    public javax.swing.JCheckBox jCheckBoxRojoVerde;
     public javax.swing.JComboBox<String> jComboBoxCategoria;
     public javax.swing.JComboBox<String> jComboBoxUsuario;
     private javax.swing.JLabel jLabel1;
@@ -310,14 +316,9 @@ public class Convertidor extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JProgressBar jProgressBar1;
-    private javax.swing.JRadioButton jRadioButtonBlancoNegro;
-    public javax.swing.JRadioButton jRadioButtonCopiaJPEG;
-    public javax.swing.JRadioButton jRadioButtonJPEGaBMP;
-    public javax.swing.JRadioButton jRadioButtonModificar;
-    public javax.swing.JRadioButton jRadioButtonRojoVerdeAzulSepia;
+    private javax.swing.JProgressBar jProgressBar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
+    public javax.swing.JTextArea jTextArea;
     // End of variables declaration//GEN-END:variables
 }

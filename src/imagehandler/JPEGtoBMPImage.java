@@ -44,7 +44,7 @@ public class JPEGtoBMPImage extends ImageHandler {
         }
 
         String ext = "";
-        if (extension.equals("jpeg")) {
+        if (extension.equals("jpeg") || extension.equals("jpg")) {
             ext = "bmp";
         } else if (extension.equals("bmp")) {
             ext = "jpeg";

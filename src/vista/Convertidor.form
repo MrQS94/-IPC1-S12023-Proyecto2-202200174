@@ -40,8 +40,11 @@
                           <Group type="102" attributes="0">
                               <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                               <EmptySpace pref="58" max="32767" attributes="0"/>
-                              <Component id="jButtonEjecutar" min="-2" pref="226" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jButtonEjecutar" max="32767" attributes="0"/>
+                                  <Component id="jButtonEjecutarParalelo" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jPanel3" max="32767" attributes="0"/>
                           <Component id="jPanel5" max="32767" attributes="0"/>
@@ -69,14 +72,19 @@
                       <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-                              <Component id="jButtonEjecutar" min="-2" pref="70" max="-2" attributes="0"/>
+                              <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="jButtonEjecutar" min="-2" pref="49" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="jButtonEjecutarParalelo" min="-2" pref="49" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jPanel5" max="32767" attributes="0"/>
@@ -227,6 +235,7 @@
                 <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
                   <StringArray count="0"/>
                 </Property>
+                <Property name="selectionMode" type="int" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -258,14 +267,14 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jRadioButtonCopiaJPEG" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jRadioButtonJPEGaBMP" alignment="1" max="32767" attributes="0"/>
-                      <Component id="jRadioButtonBlancoNegro" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jRadioButtonModificar" alignment="1" max="32767" attributes="0"/>
-                      <Component id="jRadioButtonRojoVerdeAzulSepia" alignment="1" pref="162" max="32767" attributes="0"/>
+                      <Component id="jCheckBoxJPEGTOBMP" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jCheckBoxCopia" alignment="1" pref="162" max="32767" attributes="0"/>
+                      <Component id="jCheckBoxRojoVerde" alignment="0" pref="162" max="32767" attributes="0"/>
+                      <Component id="jCheckBoxModificar" alignment="1" pref="162" max="32767" attributes="0"/>
+                      <Component id="jCheckBoxBN" alignment="1" pref="162" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -275,89 +284,56 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jRadioButtonJPEGaBMP" min="-2" pref="22" max="-2" attributes="0"/>
+                  <Component id="jCheckBoxJPEGTOBMP" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jRadioButtonCopiaJPEG" min="-2" pref="22" max="-2" attributes="0"/>
+                  <Component id="jCheckBoxCopia" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jRadioButtonRojoVerdeAzulSepia" min="-2" pref="22" max="-2" attributes="0"/>
+                  <Component id="jCheckBoxRojoVerde" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jRadioButtonModificar" min="-2" pref="22" max="-2" attributes="0"/>
+                  <Component id="jCheckBoxModificar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jRadioButtonBlancoNegro" min="-2" pref="22" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="jCheckBoxBN" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="16" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JRadioButton" name="jRadioButtonJPEGaBMP">
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxJPEGTOBMP">
           <Properties>
             <Property name="text" type="java.lang.String" value="JPEG a BMP y Viceversa"/>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                <LineBorder/>
-              </Border>
-            </Property>
-            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="2"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="jRadioButtonCopiaJPEG">
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxCopia">
           <Properties>
             <Property name="text" type="java.lang.String" value="Copia JPEG"/>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                <LineBorder/>
-              </Border>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="2"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="jRadioButtonRojoVerdeAzulSepia">
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxRojoVerde">
           <Properties>
             <Property name="text" type="java.lang.String" value="Rojo, Verde, Azul y Sepia"/>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                <LineBorder/>
-              </Border>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="2"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="jRadioButtonModificar">
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxModificar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Modificar Imagen"/>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                <LineBorder/>
-              </Border>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="2"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="jRadioButtonBlancoNegro">
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxBN">
           <Properties>
             <Property name="text" type="java.lang.String" value="Blanco y Negro"/>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                <LineBorder/>
-              </Border>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="2"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -365,7 +341,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="jButtonEjecutar">
+    <Component class="javax.swing.JButton" name="jButtonEjecutarParalelo">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
@@ -388,7 +364,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jProgressBar1" max="32767" attributes="0"/>
+                      <Component id="jProgressBar" max="32767" attributes="0"/>
                       <Component id="jLabel4" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -400,7 +376,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jProgressBar1" pref="26" max="32767" attributes="0"/>
+                  <Component id="jProgressBar" pref="26" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -417,7 +393,7 @@
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JProgressBar" name="jProgressBar1">
+        <Component class="javax.swing.JProgressBar" name="jProgressBar">
         </Component>
       </SubComponents>
     </Container>
@@ -473,15 +449,29 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextArea" name="jTextArea1">
+            <Component class="javax.swing.JTextArea" name="jTextArea">
               <Properties>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JButton" name="jButtonEjecutar">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="EJECUTAR UNA IMAGEN"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
   </SubComponents>
 </Form>

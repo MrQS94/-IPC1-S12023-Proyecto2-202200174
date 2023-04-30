@@ -8,8 +8,6 @@ import listas.ListaDoble;
 import listas.ListaSimple;
 import vista.MenuPrincipal;
 
-
-
 /**
  *
  * @author queza
@@ -24,7 +22,7 @@ public class Main {
         ListaSimple listUsuario = new ListaSimple();
         ListaDoble listDoble = new ListaDoble();
         MenuPrincipal menuP = new MenuPrincipal(listUsuario, listDoble);
-        menuP.show();  
+        menuP.show();
     }
 
 }

@@ -4,10 +4,19 @@
  */
 package controlador;
 
+import handlers.JPEGHandler;
+import imagehandler.JPEGImageCopy;
+import imagehandler.JPEGImageHandlerBN;
+import imagehandler.JPEGImageHandlerColors;
+import imagehandler.JPEGImageHandlerRotator;
+import imagehandler.JPEGtoBMPImage;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.io.File;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import listas.ListaDoble;
 import listas.ListaSimple;
@@ -30,6 +39,7 @@ public class ControladorConvertidor implements ItemListener, ActionListener {
         this.listDoble = listDoble;
         this.convert.jComboBoxUsuario.addItemListener(this);
         this.convert.jButtonAgregar.addActionListener(this);
+        this.convert.jButtonEjecutar.addActionListener(this);
         CargarUsuarios();
     }
 
@@ -54,8 +64,38 @@ public class ControladorConvertidor implements ItemListener, ActionListener {
         }
     }
 
-    
-    
+    private void EjecutarUnaImagen() throws Exception {
+        String imgUrl = convert.jList.getSelectedValue();
+        File file = new File(imgUrl);
+
+        if (convert.jCheckBoxJPEGTOBMP.isSelected()) {
+            JPEGtoBMPImage jpegToBMP = new JPEGtoBMPImage("", file);
+            JPEGHandler.runHandler(jpegToBMP, convert.jTextArea);
+        }
+
+        if (convert.jCheckBoxCopia.isSelected()) {
+            JPEGImageCopy copy = new JPEGImageCopy("", file);
+            JPEGHandler.runHandler(copy, convert.jTextArea);
+        }
+
+        if (convert.jCheckBoxRojoVerde.isSelected()) {
+            JPEGImageHandlerColors handlerColor = new JPEGImageHandlerColors("", file);
+            JPEGHandler.runHandler(handlerColor, convert.jTextArea);
+        }
+
+        if (convert.jCheckBoxModificar.isSelected()) {
+            JPEGImageHandlerRotator rotator = new JPEGImageHandlerRotator("", file);
+            JPEGHandler.runHandler(rotator, convert.jTextArea);
+        }
+
+        if (convert.jCheckBoxBN.isSelected()) {
+            JPEGImageHandlerBN bn = new JPEGImageHandlerBN("", file);
+            JPEGHandler.runHandler(bn, convert.jTextArea);
+        }
+        
+        System.out.flush();
+    }
+
     private void CargarUserCatImg() {
         if (convert.jComboBoxUsuario.getSelectedItem() != null
                 && convert.jComboBoxCategoria.getSelectedItem() != null) {
@@ -86,6 +126,12 @@ public class ControladorConvertidor implements ItemListener, ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == convert.jButtonAgregar) {
             CargarUserCatImg();
+        } else if (e.getSource() == convert.jButtonEjecutar) {
+            try {
+                EjecutarUnaImagen();
+            } catch (Exception ex) {
+                Logger.getLogger(ControladorConvertidor.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 

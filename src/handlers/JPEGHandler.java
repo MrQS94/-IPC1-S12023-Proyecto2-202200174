@@ -1,10 +1,12 @@
 package handlers;
 
+import javax.swing.JTextArea;
 
 /**
-*   @author Auxiliares
-*	@version 1.0
-**/
+ * @author Auxiliares
+ * @version 1.0
+ *
+ */
 public class JPEGHandler {
 
     public static void runHandler(ImageHandler imgh) throws Exception {
@@ -23,5 +25,19 @@ public class JPEGHandler {
         /**
          * --------------------- *
          */
+    }
+
+    public static void runHandler(ImageHandler imgh, JTextArea jta) throws Exception {
+        String texto = "";
+        texto += "--------------------------------------";
+        texto += "\n" + imgh.getClass().getTypeName().toUpperCase() + ": ";
+        texto += "\nLeyendo imagen : " + imgh.getFileName();
+        imgh.readFile();
+        texto += "Proceso de lectura de imagen terminado!";
+        texto += "\nGenerando imagenes : ";
+        imgh.generateFiles();
+        texto += "Proceso de generacion de archivos terminado!";
+        texto += "\n--------------------------------------";
+        jta.setText(texto);
     }
 }

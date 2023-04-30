@@ -82,6 +82,7 @@ public class ControladorConvertidor implements ItemListener, ActionListener {
                 texto += convert.jTextArea.getText();
                 texto += JPEGHandler.runHandler(jpegToBMP, texto, convert.jTextArea);
                 tiempo++;
+                Thread.sleep(1000);
             }
 
             if (convert.jCheckBoxCopia.isSelected()) {
@@ -89,6 +90,7 @@ public class ControladorConvertidor implements ItemListener, ActionListener {
                 texto += convert.jTextArea.getText();
                 texto += JPEGHandler.runHandler(copy, texto, convert.jTextArea);
                 tiempo++;
+                Thread.sleep(1000);
             }
 
             if (convert.jCheckBoxRojoVerde.isSelected()) {
@@ -96,6 +98,7 @@ public class ControladorConvertidor implements ItemListener, ActionListener {
                 texto += convert.jTextArea.getText();
                 texto += JPEGHandler.runHandler(handlerColor, texto, convert.jTextArea);
                 tiempo++;
+                Thread.sleep(1000);
             }
 
             if (convert.jCheckBoxModificar.isSelected()) {
@@ -103,6 +106,7 @@ public class ControladorConvertidor implements ItemListener, ActionListener {
                 texto += convert.jTextArea.getText();
                 texto += JPEGHandler.runHandler(rotator, texto, convert.jTextArea);
                 tiempo++;
+                Thread.sleep(1000);
             }
 
             if (convert.jCheckBoxBN.isSelected()) {
@@ -110,6 +114,7 @@ public class ControladorConvertidor implements ItemListener, ActionListener {
                 texto += convert.jTextArea.getText();
                 texto += JPEGHandler.runHandler(bn, texto, convert.jTextArea);
                 tiempo++;
+                Thread.sleep(1000);
             }
 
             ActionListener ac = new ActionListener() {

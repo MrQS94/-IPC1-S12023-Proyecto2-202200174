@@ -30,7 +30,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItemBiblio">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Alt+1"/>
+                  <KeyStroke key="Alt+3"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Ingresar a la Biblioteca"/>
               </Properties>
@@ -52,10 +52,13 @@
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItemConvertidor">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Alt+3"/>
+                  <KeyStroke key="Alt+1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Ingresar al Convertidor"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemConvertidorActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>

@@ -5,6 +5,7 @@
 package vista;
 
 import controlador.ControladorBiblioteca;
+import controlador.ControladorConvertidor;
 import controlador.ControladorEditor;
 import java.awt.Color;
 import javax.swing.JInternalFrame;
@@ -84,7 +85,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenu2.setText("Funciones");
 
-        jMenuItemBiblio.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_1, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        jMenuItemBiblio.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_3, java.awt.event.InputEvent.ALT_DOWN_MASK));
         jMenuItemBiblio.setText("Ingresar a la Biblioteca");
         jMenuItemBiblio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,8 +103,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItemEditor);
 
-        jMenuItemConvertidor.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_3, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        jMenuItemConvertidor.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_1, java.awt.event.InputEvent.ALT_DOWN_MASK));
         jMenuItemConvertidor.setText("Ingresar al Convertidor");
+        jMenuItemConvertidor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemConvertidorActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItemConvertidor);
 
         jMenuBar1.add(jMenu2);
@@ -155,6 +161,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         ControladorEditor control = new ControladorEditor(edit);
         EvitarAbrir(edit);
     }//GEN-LAST:event_jMenuItemEditorActionPerformed
+
+    private void jMenuItemConvertidorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConvertidorActionPerformed
+        // TODO add your handling code here:
+        Convertidor convert = new Convertidor();
+        ControladorConvertidor control = new ControladorConvertidor(convert, listaSimple, listDoble);
+        EvitarAbrir(convert);
+    }//GEN-LAST:event_jMenuItemConvertidorActionPerformed
 
     /**
      * @param args the command line arguments

@@ -62,14 +62,13 @@ public class ControladorBiblioteca implements ActionListener, ItemListener, List
             int opcion = jfc.showOpenDialog(null);
             if (opcion == JFileChooser.APPROVE_OPTION) {
                 File file = jfc.getSelectedFile();
-                String url = file.getAbsolutePath();
-                ImageIcon img = new ImageIcon(url);
+                ImageIcon img = new ImageIcon(file.getAbsolutePath());
                 Icon icon = new ImageIcon(img.getImage().getScaledInstance(menu.jLabelImg.getWidth(), menu.jLabelImg.getHeight(), 1)); // width height scalate
                 menu.jLabelImg.setIcon(icon);
                 String cat = menu.jList.getSelectedValue();
-                listDoble.add(new ModeloUsuario(user, url, cat));
-                menu.jComboBoxImagen.addItem(url);
-                menu.jComboBoxImagen.setSelectedItem(url);
+                listDoble.add(new ModeloUsuario(user, file.getAbsolutePath(), cat));
+                menu.jComboBoxImagen.addItem(file.getAbsolutePath());
+                menu.jComboBoxImagen.setSelectedItem(file.getAbsolutePath());
             }
         } else {
             JOptionPane.showMessageDialog(null, "Seleccione o agregue una categoria.", "ADVERTENCIA!", JOptionPane.WARNING_MESSAGE);
@@ -115,7 +114,7 @@ public class ControladorBiblioteca implements ActionListener, ItemListener, List
                 listModel.addElement(object1);
             }
         }
-        
+
         if (listModel.isEmpty()) {
             listModel.addElement("General");
         }
@@ -133,6 +132,7 @@ public class ControladorBiblioteca implements ActionListener, ItemListener, List
         String[] file = (String[]) listDoble.find(userCat);
         for (String file1 : file) {
             if (file1 != null) {
+
                 menu.jComboBoxImagen.addItem(file1);
             }
         }

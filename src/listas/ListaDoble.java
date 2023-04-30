@@ -75,14 +75,14 @@ public class ListaDoble extends EstructuraDeDatos {
         files = new String[contador];
 
         contador = 0;
-        for (int j = 0; j < files.length; j++) {
+        for (int i = 0; i < files.length; i++) {
             mod = (ModeloUsuario) temporal.getValor();
             if (mod.getUser().equals(user) && mod.getCategorias().equals(cat)) {
                 contador++;
-                files[j] = mod.getFile();
+                files[i] = mod.getFile();
             } else if (mod.getUser().equals(user) && cat == null) {
                 contador++;
-                files[j] = mod.getCategorias();
+                files[i] = mod.getCategorias();
             }
             temporal = temporal.getSiguiente();
         }
